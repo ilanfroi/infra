@@ -17,7 +17,7 @@
   template:
     src: prod.conf.j2
     dest: /etc/httpd/conf.d/prod.conf
-    Owner: root
+    owner: root
     group: root
     mode: 0644
   notify: restart apache
