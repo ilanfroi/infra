@@ -29,14 +29,14 @@
     state: enabled
   notify: restart firewalld
   
-- name: Check for existence of index.htm
+- name: Check for existence of index.html
   stat:
     path: "{{ prod_document_root }}/index.html"
   register: index_stats
-  
+
 - name: Install a skeleton index.html
-  сорy:
-    content: "This is the production server on {{ inventory_hostname }}\n"
+  copy:
+    content: "This is the production server on {{ invento    ry_hostname }}\n"
     dest: "{{ prod_document_root }}/index.html"
     owner: root
     group: root
@@ -44,4 +44,3 @@
   when:
     - index_stats.stat.exists is defined
     - not index_stats.stat.exists
-
