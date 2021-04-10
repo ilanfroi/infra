@@ -36,7 +36,7 @@
 
 - name: Install a skeleton index.html
   copy:
-    content: "This is the production server on {{ invento    ry_hostname }}\n"
+    content: "This is the production server on {{ inventory_hostname }}\n"
     dest: "{{ prod_document_root }}/index.html"
     owner: root
     group: root
